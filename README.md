@@ -1,5 +1,5 @@
 # Disaster Response Pipeline Project
-This project is to develop disaster message classification models using machine learning techniques. The data is provided by Figure 8, and the trained model has been deployed on Heroku as a web app (https://drtestxu.herokuapp.com/). This trained model is a multiclass classfiers which include 36 types of responses, including related, aid related, clothing, flood, water, missing people etc. 
+This project is to develop disaster message classification models using machine learning techniques. The data is provided by Figure 8, and the trained model has been deployed on Heroku as a web app (https://disaster-response-xu-created.herokuapp.com/). This trained model is a multiclass classfiers which include 36 types of responses, including related, aid related, clothing, flood, water, missing people etc. 
 
 ### Deployed Heroku app
 https://disaster-response-xu-created.herokuapp.com/
