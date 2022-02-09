@@ -5,6 +5,18 @@ import sys
 
 
 def load_data(messages_filepath, categories_filepath):
+    '''
+    Read the file paths for two csv files and load them
+    into two pandas dataframe, and return merged them to dataframe
+    
+    Args:
+      messages_filepath (str): name of csv datafile
+      categories_filepath (str): name of csv datafile
+      
+    Returns:
+      df (dataframe): merged dataframe
+    '''
+        
     # load messages dataset
     messages = pd.read_csv(messages_filepath) 
     # load categories dataset
@@ -18,6 +30,16 @@ def load_data(messages_filepath, categories_filepath):
     
     
 def clean_data(df):
+    ''' 
+    Cleaning the raw data and convert them into usable data. 
+    
+    Args:
+      df (dataframe): name of dataframe
+      
+    Returns:
+      df (dataframe): name of dataframe
+    '''
+    
     # create a dataframe of the 36 individual category columns
     categories = df['categories'].str.split(pat=';',  expand=True)
     # select the first row of the categories dataframe
@@ -45,6 +67,18 @@ def clean_data(df):
     return df
 
 def save_data(df, table_name, database_filename):
+    ''' 
+    Saving data in SQL database
+    
+    Args:
+      df (dataframe): name of dataframe
+      table_name (str): the name of the table
+      database_filename: the name of the sql database
+      
+    Returns:
+      None
+    '''
+    
     # Save the clean dataset into an sqlite database
     engine = create_engine('sqlite:///' + database_filename)
     df.to_sql(table_name, engine, index=False, if_exists='replace', chunksize=100 )
