@@ -26,7 +26,7 @@ The KNN model is currenlty used to classify the disaster events. Data Pipeline h
 ### Repository layout
 
 ├── DRapp  <br>
-│   ├── __init__.py  <br>
+│   ├── `__init__.py`  <br>
 │   ├── run.py <br>
 │   └── templates  <br>
 │       ├── go.html  <br>
@@ -41,7 +41,7 @@ The KNN model is currenlty used to classify the disaster events. Data Pipeline h
 │   └── train_classifier.py  <br>
 │  <br>
 ├── utils  <br>
-│   ├── __init__.py  <br>
+│   ├── `__init__.py`  <br>
 │   └── tokenizer.py  <br>
 │  <br>
 ├── .gitattibutes  <br>
@@ -64,12 +64,12 @@ The KNN model is currenlty used to classify the disaster events. Data Pipeline h
 2. Go to `app` directory: `cd DRapp`
 
 3. Run your web app: `python run.py`
-    - uncommentted:  Line 16  app = Flask(__name__)
-    				 Line 123 def main():
-                	 Line 124    app.run(host='0.0.0.0', port=3000, debug=True)
-                	 Line 127 if __name__ == '__main__':
-                	 Line 128    main()
-    - commentted:    Line 13 from DRapp import app
+    - uncommentted:  Line 16  `app = Flask(__name__)`
+			 Line 123 `def main():`
+                	 Line 124    `app.run(host='0.0.0.0', port=3000, debug=True)`
+                	 Line 127 `if __name__ == '__main__':`
+                	 Line 128    `main()`
+    - commentted:    Line 13 `from DRapp import app`
 
 4. Go to http://0.0.0.0:3000/
 
