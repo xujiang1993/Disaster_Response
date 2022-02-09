@@ -27,6 +27,18 @@ nltk.download('wordnet')
 
 
 def load_data(database_filepath):
+    '''
+    Load sql database into dataframe and seperate the features and labels
+    
+    Args:
+      database_filepath (str): name of database containing data
+      
+    Returns:
+      X (dataframe): message data
+      Y (dataframe): categories (labels)
+      category_names: headers of categories
+    '''
+    
     engine = create_engine('sqlite:///'+database_filepath)
     df = pd.read_sql('SELECT * FROM massage_and_categories', engine)
     X = df['message']
@@ -38,6 +50,16 @@ def load_data(database_filepath):
 
 
 def build_model():
+    '''build a model pipeline
+    Function builds a pipeline by combining CountVectorize, TfidfTransformers and a KNN's Multioutputclassifier.
+    Optimize model using cross valicdation and measure the performance with f1score.
+    
+    Args:
+      None
+      
+    Returns:
+      scikit learn pipeline model
+    '''   
     pipeline = Pipeline([
     ('vect', CountVectorizer(tokenizer=tokenize)),
     ('tfidf', TfidfTransformer()),
@@ -56,6 +78,23 @@ def build_model():
 
 
 def evaluate_model(model, X_test, Y_test, category_names):
+    '''
+    evaluate the trained model with test dataset
+    
+    Function prints the model performance on test dataset,
+    and prints multiple metrics (precision, recall, f1score)
+    with various averaging
+    
+    Args:
+      model (scikit learn pipeline): name of model
+      X_test (dataframe): test dataset features
+      Y_test (dataframe): test dataset labels
+      category_names(string): output class
+      
+    Returns:
+      None
+    '''
+        
     def column(matrix, i): # Extract the column from input matrix
         return [row[i] for row in matrix]
     y_pred = model.predict(X_test)
@@ -65,6 +104,16 @@ def evaluate_model(model, X_test, Y_test, category_names):
 
 
 def save_model(model, model_filepath):
+    '''
+    save the trained model as .pkl file
+    
+    Args:
+      model (scikit learn pipeline): name of model
+      model_filepath (str): path and name of the .pkl file
+      
+    Returns:
+      None
+    ''' 
     filename = model_filepath
     pickle.dump(model, open(filename, 'wb'))
 
