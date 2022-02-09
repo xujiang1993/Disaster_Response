@@ -26,31 +26,31 @@ The KNN model is currenlty used to classify the disaster events. Data Pipeline h
 ### Repository layout
 
 ├── DRapp  <br>
-│   ├── __init__.py
-│   ├── run.py
-│   └── templates
-│       ├── go.html
-│       └── master.html
-├── data
-│   ├── disaster_categories.csv
-│   ├── disaster_messages.csv
-│   └──process_data.py
-│
-├── models
-│   ├── classifier.pkl
-│   └── train_classifier.py
-│
-├── utils
-│   ├── __init__.py
-│   └── tokenizer.py
-│
-├── .gitattibutes
-├── DisasterResponse.db
-├── Procfile
-├── README.md
-├── requirement.txt
-├── disasterresponse.py
-└── runtime.txt
+│   ├── __init__.py  <br>
+│   ├── run.py <br>
+│   └── templates  <br>
+│       ├── go.html  <br>
+│       └── master.html  <br>
+├── data  <br>
+│   ├── disaster_categories.csv  <br>
+│   ├── disaster_messages.csv  <br>
+│   └──process_data.py  <br>
+│  <br>
+├── models  <br>
+│   ├── classifier.pkl  <br>
+│   └── train_classifier.py  <br>
+│  <br>
+├── utils  <br>
+│   ├── __init__.py  <br>
+│   └── tokenizer.py  <br>
+│  <br>
+├── .gitattibutes  <br>
+├── DisasterResponse.db  <br>
+├── Procfile  <br>
+├── README.md  <br>
+├── requirement.txt  <br>
+├── disasterresponse.py  <br>
+└── runtime.txt  <br>
 
 
 ### How to run the code locally:
