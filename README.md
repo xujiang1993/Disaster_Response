@@ -24,7 +24,7 @@ The data cleaning include:
 The KNN model is currenlty used to classify the disaster events. Data Pipeline has been built include tokenizer and Tfidf transfomers. GridsearchCV is used to tune the parameters. And the trained model is saved as .pkl file.
 
 ### Repository layout
-`
+
 ├── DRapp  <br>
 │   ├── __init__.py
 │   ├── run.py
@@ -51,7 +51,7 @@ The KNN model is currenlty used to classify the disaster events. Data Pipeline h
 ├── requirement.txt
 ├── disasterresponse.py
 └── runtime.txt
-`
+
 
 ### How to run the code locally:
 1. Run the following commands in the project's root directory to set up your database and model.
