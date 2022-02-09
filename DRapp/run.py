@@ -14,8 +14,17 @@ from DRapp import app
 
 
 # app = Flask(__name__)
-
+    
 def tokenize(text):
+    '''
+    Tokenize the text data into vector features
+    
+    Args:
+      text (str): a message in text form
+      
+    Returns:
+      clean_tokens (array): array of words after processing
+    '''
     tokens = word_tokenize(text)
     lemmatizer = WordNetLemmatizer()
 
@@ -42,16 +51,23 @@ print('Finished loading model')
 @app.route('/')
 @app.route('/index')
 def index():
+    '''
+    Build the home page of the web
     
+    Args:
+      None
+      
+    Returns:
+      None
+    '''
+        
     # extract data needed for visuals
-    # TODO: Below is an example - modify to extract data for your own visuals
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
     related_counts = df[df.columns[4:-1]].sum()
     related_names = list(df.columns[4:-1])
     
     # create visuals
-    # TODO: Below is an example - modify to create your own visuals
     graphs = [
         {
             'data': [
@@ -105,6 +121,15 @@ def index():
 # web page that handles user query and displays model results
 @app.route('/go')
 def go():
+    '''save user input in query
+    
+    Arge:
+      None
+      
+    Returns:
+      None
+    '''
+    
     # save user input in query
     query = request.args.get('query', '') 
 
