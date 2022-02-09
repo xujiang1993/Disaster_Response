@@ -26,6 +26,7 @@ The KNN model is currenlty used to classify the disaster events. Data Pipeline h
 ### Repository layout
 `
 ├── DRapp  
+
 │   ├── __init__.py <br/>
 │   ├── run.py<br />
 │   └── templates<br />
