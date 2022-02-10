@@ -65,10 +65,10 @@ def clean_data(df):
     # drop duplicates
     df = df.drop_duplicates(subset=['id'])
     
-    #dropping 'child_alone'
+    # dropping 'child_alone' - this column only contain 0 which is useless for model to learn
     df = df.drop('child_alone', axis = 1)
 
-    #replace all 2 by 1 which could keep as many as possible observations
+    # replace all 2 by 1 which could keep as many as possible observations
     df['related']=df['related'].replace(2, 1)
     return df
 
