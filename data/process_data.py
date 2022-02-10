@@ -64,6 +64,12 @@ def clean_data(df):
 
     # drop duplicates
     df = df.drop_duplicates(subset=['id'])
+    
+    #dropping 'child_alone'
+    df = df.drop('child_alone', axis = 1)
+
+    #replace all 2 by 1 which could keep as many as possible observations
+    df['related']=df['related'].replace(2, 1)
     return df
 
 def save_data(df, table_name, database_filename):
